@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/cloudnode-pro/node-client/issues"
   },
-  "homepage": "https://github.com/cloudnode-pro/node-client#readme"
+  "homepage": "https://github.com/cloudnode-pro/node-client#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.6"
+  }
 }
