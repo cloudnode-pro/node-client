@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Cloudnode API client Node.js library and CLI tool ",
   "module": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/cloudnode-pro/node-client/issues"
   },
-  "homepage": "https://github.com/cloudnode-pro/node-client#readme"
+  "homepage": "https://github.com/cloudnode-pro/node-client#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.6"
+  }
 }
