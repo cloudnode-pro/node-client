@@ -5,4 +5,5 @@
         "name": "cloudnode",
         "description": "Cloudnode CLI API client"
     },
+    "verifySSL": true
 }
