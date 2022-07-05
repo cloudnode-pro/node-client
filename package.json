@@ -18,6 +18,12 @@
   },
   "homepage": "https://github.com/cloudnode-pro/node-client#readme",
   "dependencies": {
-    "node-fetch": "^3.2.6"
+    "commander": "^9.3.0",
+    "emphasize": "^5.0.0",
+    "node-fetch": "^3.2.6",
+    "ora": "^6.1.2"
+  },
+  "bin": {
+    "cloudnode": "./cli.js"
   }
 }
