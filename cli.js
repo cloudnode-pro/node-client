@@ -1,4 +1,4 @@
-#!/usr/bin/node --no-warnings
+#!/bin/env -S node --no-warnings
 import ApiClient from "./lib/ApiClient.js";
 import {emphasize} from "emphasize";
 import {program} from "commander";
