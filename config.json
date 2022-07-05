@@ -1,4 +1,8 @@
 {
     "userAgent": "cloudnode",
-    "baseUrl": "https://api.cloudnode.pro/v4/"
+    "baseUrl": "https://api.cloudnode.pro/v4/",
+    "command": {
+        "name": "cloudnode",
+        "description": "Cloudnode CLI API client"
+    },
 }
