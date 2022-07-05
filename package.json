@@ -24,6 +24,7 @@
     "ora": "^6.1.2"
   },
   "bin": {
-    "cloudnode": "./cli.js"
+    "cloudnode": "./cli.js",
+    "cldn": "./cli.js"
   }
 }
