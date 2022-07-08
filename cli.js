@@ -111,6 +111,64 @@ program.command("check")
         }
     });
 
+// account
+program.command("account")
+    .description("Account details")
+    .option("-h, --headers", "Return only response headers")
+    .option("-b, --body", "Return only response body")
+    .option("--raw", "Return raw response body")
+    .action(async options => {
+        const spinner = !options.raw ? ora("Sending request...").start() : null;
+        const api = apiClient ? apiClient : new ApiClient("token_null");
+        if (options.headers) options.body = false;
+        else if (options.body) options.headers = false;
+        try {
+            const res = await api.account.retrieve();
+            if (options.raw) console.log(JSON.stringify(res));
+            else {
+                if (res._res.status < 400) spinner.succeed(`${res._res.status}: ${res._res.statusText}`);
+                else spinner.fail(`${res._res.status}: ${res._res.statusText}`);
+                console.log(formatResponse(res, options.headers, options.body));
+            }
+        }
+        catch (e) {
+            if (!options.raw) {
+                spinner.fail(`An error occurred`);
+                console.error(e);
+            }
+            process.exit(1);
+        }
+    });
+
+// account/identity
+program.command("account/identity")
+    .description("Account identity details")
+    .option("-h, --headers", "Return only response headers")
+    .option("-b, --body", "Return only response body")
+    .option("--raw", "Return raw response body")
+    .action(async options => {
+        const spinner = !options.raw ? ora("Sending request...").start() : null;
+        const api = apiClient ? apiClient : new ApiClient("token_null");
+        if (options.headers) options.body = false;
+        else if (options.body) options.headers = false;
+        try {
+            const res = await api.account.identity();
+            if (options.raw) console.log(JSON.stringify(res));
+            else {
+                if (res._res.status < 400) spinner.succeed(`${res._res.status}: ${res._res.statusText}`);
+                else spinner.fail(`${res._res.status}: ${res._res.statusText}`);
+                console.log(formatResponse(res, options.headers, options.body));
+            }
+        }
+        catch (e) {
+            if (!options.raw) {
+                spinner.fail(`An error occurred`);
+                console.error(e);
+            }
+            process.exit(1);
+        }
+    });
+
 // auth.check
 program.command("auth/check")
     .description("Check request authentication")
